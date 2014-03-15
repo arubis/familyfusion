@@ -2,7 +2,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-require 'dotenv'
 require 'twilio-ruby'
 
 require 'haml'
@@ -39,10 +38,10 @@ get '/' do
   haml :main, locals: { title: "Hello, world!" }
 end
 
-post '/makecall' do
+post '/call' do
    # Use the Twilio REST API to initiate an outgoing call
   if !params['number']
-    redirect_to '/error', 'msg' => 'Invalid phone number'
+    redirect to('/error'), 'Invalid phone number'
     return
   end
  
@@ -54,22 +53,22 @@ post '/makecall' do
   }
 
   begin
-    client = Twilio::REST::Client.new(ACCOUNT_SID, ACCOUNT_TOKEN)
+    client = Twilio::REST::Client.new(ACCOUNT_SID, AUTH_TOKEN)
     client.account.calls.create data
   rescue StandardError => bang
-    redirect_to '/error', 'msg' => "Error #{bang}"
+    redirect to('/error'), "Error #{bang}"
     return
   end
  
-  redirect_to '/calling', 'msg' => "Calling #{params['number']}..."
+  redirect to('/calling'), "Calling #{params['number']}..."
 end
 
 get '/calling' do
-  "Outgoing call! :: #{msg}, #{request.inspect}"
+  "Outgoing call! ::  #{request.inspect}"
 end
 
 get '/error' do
-  "Something went wrong: #{msg}, #{request.inspect}"
+  "Something went wrong: #{request.inspect}"
 end
 
 

@@ -15,6 +15,8 @@ gem "bootstrap-sass"
 gem "foreman"
 gem 'dotenv'
 
+gem 'builder' # need this to construct TwiML
+
 # let's make some phone calls
 gem 'twilio-ruby'
 

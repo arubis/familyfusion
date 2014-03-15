@@ -3,6 +3,8 @@ require 'bundler'
 Bundler.setup
 require 'rack'
 require 'thin'
+require 'dotenv'
+
 
 $: << File.dirname(__FILE__)
 require 'family-fusion'
