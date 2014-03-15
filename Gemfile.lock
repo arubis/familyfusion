@@ -194,6 +194,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  builder
   compass
   dotenv
   foreman
