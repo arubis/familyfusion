@@ -1,1 +1,0 @@
-Each Solar Bottle Bulb, in direct sunlight, can be as bright as a 55W incandescent bulb—which can help students read, and everyone to perform tasks indoors.
