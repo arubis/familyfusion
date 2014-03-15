@@ -13,6 +13,9 @@ gem 'compass'
 gem "bootstrap-sass"
 gem "foreman"
 
+# let's make some phone calls
+gem 'twilio-ruby'
+
 group :test, :development do
   gem "sinatra-reloader"
   gem 'rspec'
