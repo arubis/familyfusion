@@ -2,6 +2,9 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
+require 'dotenv'
+require 'twilio-ruby'
+
 require 'haml'
 require 'kramdown'
 
@@ -10,6 +13,13 @@ set :haml, :format => :html5, :layout => true
    # n.b. :layout => true renders haml docs through layout.haml if it exists
    # and can be redirected to another symbol for a different layout
    # or "false" for none
+
+# get environment variables
+Dotenv.load
+
+# set up twilio
+account_sid = ENV['TWILIO_SID']
+auth_token = ENV['TWILIO_TOKEN']
 
 # set up basic caching
 #set :static_cache_control, [:public, :max_age => 300]

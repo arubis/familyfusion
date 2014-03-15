@@ -13,6 +13,7 @@ gem 'heroku'
 gem 'compass'
 gem "bootstrap-sass"
 gem "foreman"
+gem 'dotenv'
 
 # let's make some phone calls
 gem 'twilio-ruby'
