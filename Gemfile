@@ -5,6 +5,7 @@ gem "rack", '~>1.0'
 # gem "rack-rewrite", '~>1.0.0'
 gem "thin"
 gem "sinatra"
+gem "sinatra-contrib"
 gem "kramdown"
 gem "haml"
 gem "sass"

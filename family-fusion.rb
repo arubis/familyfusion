@@ -1,5 +1,7 @@
 
 require 'sinatra'
+require 'sinatra/reloader' if development?
+
 require 'haml'
 require 'kramdown'
 
@@ -16,7 +18,7 @@ set :haml, :format => :html5, :layout => true
 #end
 
 get '/' do
-  "Hello, world!"
+  haml :main, locals: { title: "Hello, world!" }
 end
 
 # get '/images/:image' do |image|

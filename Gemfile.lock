@@ -207,6 +207,7 @@ DEPENDENCIES
   rspec
   sass
   sinatra
+  sinatra-contrib
   sinatra-reloader
   spork
   thin
