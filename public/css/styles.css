@@ -7594,8 +7594,3 @@ button.close {
     display: none !important;
   }
 }
-/* line 5, ../../sass/styles.sass */
-body {
-  background-color: #555555;
-  color: #eeeeee;
-}
