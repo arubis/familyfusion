@@ -195,6 +195,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   compass
+  dotenv
   foreman
   growl (= 1.0.3)
   guard-rspec
