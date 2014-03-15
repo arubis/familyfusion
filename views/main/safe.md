@@ -1,0 +1,1 @@
+Unlike kerosene and electrically powered lights, Solar Bottle Bulbs are safe for the whole family.

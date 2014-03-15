@@ -1,0 +1,1 @@
+Purchasing every component of construction new from a retail store, a single Solar Bottle Bulb costs under 50 Dalasis (US$2). And reclaiming a plastic bottle from the waste stream reduces that by more than half.

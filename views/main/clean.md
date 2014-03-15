@@ -1,0 +1,1 @@
+No smoke, no fire, no batteries. Using Solar Bottle Bulbs can remove plastic bottles from the waste stream. And since they use only sunlight, there's no future carbon imprint.
