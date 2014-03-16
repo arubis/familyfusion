@@ -2,13 +2,20 @@
 @import 'variables';
 @import 'bootstrap';
 
+#contact-grid {
+  @extend .col-md-8;
+}
+
 .pad {
-  display: block;
+  display: inline-block;
   border: none;
   background: #CCF;
   text-align: center;
   vertical-align: middle;
   margin: 0;
   padding: 0;
+  width: 50%;
+  &.left { float: left; }
+  &.right { float: right; }
 }
 
