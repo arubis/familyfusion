@@ -49,14 +49,9 @@ end
 
 get '/contact/:person' do |p|
   # holy shit this is ugly hardcoding
-  # AND I'm even preformatting numbers
-  # grandpa = Contact.new("Grandpa", "+13038178155")
-  # grandma = Contact.new("Grandma", "+13038178155")
-  # mom = Contact.new("Mom", "+13038178155")
-  # dad = Contact.new("Dad", "+13038178155")
 
   # barffffff
-  MultiJson.dump({name: p.capitalize, number: "+13038178155", lastcall: DateTime.now - Random.rand(15)})
+  MultiJson.dump({name: p.capitalize, number: "+13038178155", lastcall: Random.rand(15)})
 
 end
 

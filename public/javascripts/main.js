@@ -6,21 +6,34 @@ $(document).ready(function() {
     console.log(json.lastcall);
   });
 
+  var newColor = function(lastcall) {
+    if(lastcall < 4) { // called in last four days
+        return 'green';
+      } else if(lastcall < 10) { // called in last ten days
+        return 'yellow';
+      }
+      return 'red';
+  };
+
   // HAHA I COPY AND PASTE THINGS WITH MY MOUSE
   $.getJSON('/contact/mom', function(json, textStatus) {
       $('#1 p.person').html(json.name);
+      $('#1').animate({backgroundColor: newColor(json.lastcall)}, 1000);
   });
 
   $.getJSON('/contact/dad', function(json, textStatus) {
       $('#2 p.person').html(json.name);
+      $('#2').animate({backgroundColor: newColor(json.lastcall)}, 1000);
   });
 
   $.getJSON('/contact/grandma', function(json, textStatus) {
       $('#3 p.person').html(json.name);
+      $('#3').animate({backgroundColor: newColor(json.lastcall)}, 1000);
   });
 
   $.getJSON('/contact/granddad', function(json, textStatus) {
       $('#4 p.person').html(json.name);
+      $('#4').animate({backgroundColor: newColor(json.lastcall)}, 1000);
   });
 
   // more analytics! morlytics. manalytics.
@@ -69,10 +82,11 @@ $(document).ready(function() {
       $(this).fadeIn()
              .animate({'top': 0, 'height': newHeight,
                        'line-height': 'normal',
-                       'width': '100%'}, 1000);  // 'line-height': newHeight, 
-      // $.post('/call', "number=+16175002301", function(data, textStatus, xhr) {
-      //   target.html("Calling someone!");
-      // });
+                       'width': '100%',
+                       'backgroundColor': '#CCF'}, 1000);  // 'line-height': newHeight, 
+      $.post('/call', "number=+16175002301", function(data, textStatus, xhr) {
+        // target.html("Calling someone!");
+      });
     }
   });
 
