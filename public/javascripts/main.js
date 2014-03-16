@@ -23,14 +23,16 @@ $(document).ready(function() {
     // prepare to animate
     var origLocation = $(this).offset();
 
-    $('.pad').not(this).hide();
+    $('.pad').not(this).fadeOut();
+    $(this).fadeOut().prepend("Calling ").append("...")
 
-    $(this).offset(origLocation);
-
-    $(this).prepend("Calling ");
-    $(this).append("...");
     var newHeight = $(window).height() - 200;
-    $(this).animate({'top': 0, 'height': newHeight, 'line-height': newHeight, 'width': '100%'}, 1000)
+
+    // $(this).prepend("Calling ").append("...");
+    $(this).fadeIn()
+           .animate({'top': 0, 'height': newHeight,
+                     'line-height': newHeight, 
+                     'width': '100%'}, 1000);
     // $.post('/call', "number=+16175002301", function(data, textStatus, xhr) {
     //   target.html("Calling someone!");
     // });

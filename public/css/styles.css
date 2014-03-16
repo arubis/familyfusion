@@ -7594,7 +7594,13 @@ button.close {
     display: none !important;
   }
 }
-/* line 9, ../../sass/styles.scss */
+/* line 5, ../../sass/styles.scss */
+#contact-grid {
+  background: #FEE;
+  opacity: 50%;
+}
+
+/* line 11, ../../sass/styles.scss */
 .pad {
   display: inline-block;
   border: none;
@@ -7605,11 +7611,11 @@ button.close {
   padding: 0;
   width: 50%;
 }
-/* line 18, ../../sass/styles.scss */
+/* line 20, ../../sass/styles.scss */
 .pad.left {
   float: left;
 }
-/* line 19, ../../sass/styles.scss */
+/* line 21, ../../sass/styles.scss */
 .pad.right {
   float: right;
 }
