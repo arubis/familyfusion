@@ -6,7 +6,7 @@ $(document).ready(function() {
   // We'll trigger this on load and on viewport resize.
   // n.b. the line-height readjustments vertically center text 
   // within each pad surface.
-  function getPadHeight() { return Math.max(($(window).height() - 200) / 2, 30); }
+  function getPadHeight() { return Math.max(($(window).height() - 100) / 2, 30); }
 
   $('.pad').height(getPadHeight);
   $('.pad').css('line-height', getPadHeight() + "px");
@@ -36,7 +36,7 @@ $(document).ready(function() {
         target.find('.tips').prepend(data).fadeIn();
       })
 
-      var newHeight = $(window).height() - 200;
+      var newHeight = $(window).height() - 100;
 
       $(this).find('.person').css('padding', '20px');
       $(this).fadeIn()
