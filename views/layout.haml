@@ -7,6 +7,7 @@
       %meta{:content => "", :name => "description"}
       %meta{:content => "Dylan Fitzgerald", :name => "author"}
 
+    = haml :_javascripts
     = haml :_styles
     = haml :_typekit
     -# = erb :_analytics
@@ -18,5 +19,3 @@
     %div= yield
 
     = haml :_footer
-
-    =# haml :_javascripts

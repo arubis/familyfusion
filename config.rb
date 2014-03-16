@@ -19,4 +19,4 @@ output_style = :expanded
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
 
-preferred_syntax = :sass
+preferred_syntax = :scss
