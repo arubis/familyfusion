@@ -24,6 +24,8 @@
 }
 
 .tips {
-  margin: 20px;
+  @extend .col-sm-8;
+  @extend .col-sm-offset-2;
+  padding: 20px;
   background: rgba(80, 80, 80, 0.3);
 }

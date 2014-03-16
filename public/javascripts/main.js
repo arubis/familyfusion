@@ -21,29 +21,32 @@ $(document).ready(function() {
   // DIVs aren't actually buttons, but I want them to be.
   // 
   $('.pad').on('click tap', function() {
-    var target = $(this);
-    mixpanel.track('outgoing call');
-    singlePad = true;
+    if(!singlePad) {  // don't run a dialout if one is already in progress
+      var target = $(this);
+      mixpanel.track('outgoing call');
+      singlePad = true;
 
-    // prepare to animate
-    var origLocation = $(this).offset();
+      // prepare to animate
+      var origLocation = $(this).offset();
 
-    $('.pad').not(this).fadeOut();
-    $(this).fadeOut().find('.person').prepend("Calling ").append("...");
+      $('.pad').not(this).fadeOut();
+      $(this).fadeOut().find('.person').prepend("Calling ").append("...");
 
-    $.get('/elder-tips', function(data) {
-      target.find('.tips').prepend(data).fadeIn();
-    })
+      $.get('/elder-tips', function(data) {
+        target.find('.tips').prepend(data).fadeIn();
+      })
 
-    var newHeight = $(window).height() - 200;
+      var newHeight = $(window).height() - 200;
 
-    $(this).fadeIn()
-           .animate({'top': 0, 'height': newHeight,
-                     'line-height': 'normal',
-                     'width': '100%'}, 1000);  // 'line-height': newHeight, 
-    // $.post('/call', "number=+16175002301", function(data, textStatus, xhr) {
-    //   target.html("Calling someone!");
-    // });
+      $(this).find('.person').css('padding', '20px');
+      $(this).fadeIn()
+             .animate({'top': 0, 'height': newHeight,
+                       'line-height': 'normal',
+                       'width': '100%'}, 1000);  // 'line-height': newHeight, 
+      // $.post('/call', "number=+16175002301", function(data, textStatus, xhr) {
+      //   target.html("Calling someone!");
+      // });
+    }
   });
 
 });
