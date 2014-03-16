@@ -137,6 +137,9 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    racksh (1.0.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -212,6 +215,7 @@ DEPENDENCIES
   kramdown
   rack (~> 1.0)
   rack-test
+  racksh
   rails_12factor
   redis
   rspec
