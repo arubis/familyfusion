@@ -78,7 +78,7 @@ post '/reminder/?' do
   # build up a response
   response = Twilio::TwiML::Response.new do |r|
     r.Say "It's good to call your mother. Please wait to connect.", :voice => 'alice'
-    r.Dial '+16172790642'
+    r.Dial '+13038178155'
     # r.Dial :callerId => '+14159992222' do |d|
     #   d.Client 'jenny'
     # end

@@ -14,6 +14,7 @@ gem 'compass'
 gem "bootstrap-sass"
 gem "foreman"
 gem 'dotenv'
+gem 'rails_12factor'
 
 gem 'builder' # need this to construct TwiML
 
