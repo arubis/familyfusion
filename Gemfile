@@ -15,7 +15,7 @@ gem "bootstrap-sass"
 gem "foreman"
 gem 'dotenv'
 gem 'rails_12factor'
-
+gem 'json'
 gem 'redis' # used for 30 seconds and instantly essential
 gem 'redis-objects'
 
