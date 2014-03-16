@@ -217,6 +217,7 @@ DEPENDENCIES
   jazz_hands
   json
   kramdown
+  multi_json
   rack (~> 1.0)
   rack-test
   racksh

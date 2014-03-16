@@ -6,7 +6,6 @@ require 'rack'
 require 'thin'
 require 'dotenv'
 require 'twilio-ruby'
-require 'JSON'
 
 # get environment variables
 Dotenv.load

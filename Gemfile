@@ -18,6 +18,7 @@ gem 'rails_12factor'
 gem 'json'
 gem 'redis' # used for 30 seconds and instantly essential
 gem 'redis-objects'
+gem 'multi_json'
 
 gem 'builder' # need this to construct TwiML
 

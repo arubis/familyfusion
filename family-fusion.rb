@@ -5,7 +5,8 @@ configure do
   require 'haml'
   require 'kramdown'
   require 'sinatra/reloader' if development?
-  require 'redis-objects'
+  # require 'redis-objects'
+  require 'multi_json'
 
   # enable sessions
   enable :sessions
@@ -55,7 +56,7 @@ get '/contact/:person' do |p|
   # dad = Contact.new("Dad", "+13038178155")
 
   # barffffff
-  JSON.generate [{name: p.capitalize, number: "+13038178155", lastcall: DateTime.now - 14}]
+  MultiJson.dump [{name: p.capitalize, number: "+13038178155", lastcall: DateTime.now - 14}]
 
 end
 
