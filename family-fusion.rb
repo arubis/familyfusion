@@ -5,6 +5,7 @@ configure do
   require 'haml'
   require 'kramdown'
   require 'sinatra/reloader' if development?
+  require 'redis-objects'
 
   # enable sessions
   enable :sessions
@@ -15,6 +16,7 @@ configure do
   AUTH_TOKEN = ENV['TWILIO_TOKEN']
   CALLER_ID = '+17139994373' # why yes I am hardcoding this
   BASE_URL = 'http://familyfusion.herokuapp.com/'
+
 end
 
 # set up basic caching
@@ -26,6 +28,8 @@ end
 #### this should ABSOLUTELY be included in a separate file
 # this is AWFUL and NOT A BEST PRACTICE
 # BAD developer. BAD. NO POO.
+#
+# but, screw it, let's prototype right here like we're writing a BASIC program
 class Contact
   include Redis::Objects
 end

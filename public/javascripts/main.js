@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  // more analytics! morlytics. manalytics.
+  mixpanel.track('access page');
+
   var singlePad = false; // track whether we've expanded to a single pad
 
   // We want to size the four dialing pad surfaces continually with
