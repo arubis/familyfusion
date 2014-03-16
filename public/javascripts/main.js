@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  // this absolutely should be a separate file.
+  $.getJSON('/contact/grandma', function(json, textStatus) {
+      
+  });
+
   // more analytics! morlytics. manalytics.
   mixpanel.track('access page');
 

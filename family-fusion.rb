@@ -31,14 +31,32 @@ end
 #
 # but, screw it, let's prototype right here like we're writing a BASIC program
 class Contact
-  include Redis::Objects
+  attr_reader :name
+  attr_reader :number
+  attr_accessor :lastcall
+
+  def initialize(name, number)
+    @name = name
+    @number = number
+    @lastcall = DateTime.now - 14
+  end
 end
-
-
-
 
 get '/' do
   haml :main
+end
+
+get '/contact/:person' do |p|
+  # holy shit this is ugly hardcoding
+  # AND I'm even preformatting numbers
+  # grandpa = Contact.new("Grandpa", "+13038178155")
+  # grandma = Contact.new("Grandma", "+13038178155")
+  # mom = Contact.new("Mom", "+13038178155")
+  # dad = Contact.new("Dad", "+13038178155")
+
+  # barffffff
+  JSON.generate [{name: p.capitalize, number: "+13038178155", lastcall: DateTime.now - 14}]
+
 end
 
 post '/call/?' do
@@ -79,9 +97,7 @@ post '/reminder/?' do
   response = Twilio::TwiML::Response.new do |r|
     r.Say "It's good to call your mother. Please wait to connect.", :voice => 'alice'
     r.Dial '+16175002301'
-    # r.Dial :callerId => '+14159992222' do |d|
-    #   d.Client 'jenny'
-    # end
+
   end
 
   # print the result
