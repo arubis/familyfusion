@@ -6,6 +6,23 @@ $(document).ready(function() {
     console.log(json.lastcall);
   });
 
+  // HAHA I COPY AND PASTE THINGS WITH MY MOUSE
+  $.getJSON('/contact/mom', function(json, textStatus) {
+      $('#1 p.person').html(json.name);
+  });
+
+  $.getJSON('/contact/dad', function(json, textStatus) {
+      $('#2 p.person').html(json.name);
+  });
+
+  $.getJSON('/contact/grandma', function(json, textStatus) {
+      $('#3 p.person').html(json.name);
+  });
+
+  $.getJSON('/contact/granddad', function(json, textStatus) {
+      $('#4 p.person').html(json.name);
+  });
+
   // more analytics! morlytics. manalytics.
   mixpanel.track('access page');
 
