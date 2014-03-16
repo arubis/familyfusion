@@ -7595,8 +7595,9 @@ button.close {
   }
 }
 /* line 5, ../../sass/styles.scss */
-.contact-grid .row div {
+.grid {
   display: block;
   border: medium solid black;
   text-align: center;
+  vertical-align: middle;
 }

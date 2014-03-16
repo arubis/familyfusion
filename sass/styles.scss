@@ -2,9 +2,10 @@
 @import 'variables';
 @import 'bootstrap';
 
-.contact-grid .row div {
+.grid {
   display: block;
   border: medium solid black;
   text-align: center;
+  vertical-align: middle;
 }
 

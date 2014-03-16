@@ -4,23 +4,23 @@
       %h1#title Call Your Mother. 
 
   .row
-    .col-md-8.col-md-offset-2.contact-grid
+    .col-md-8.col-md-offset-2#contact-grid
       .row
-        .col-xs-6#grid-top-left
+        %p.col-xs-6.grid#grid-top-left
           Mom
-        .col-sx.6#grid-top-right
+        %p.col-sx-6.grid#grid-top-right
           Dad
       .row
-        .col-xs-6#grid-bottom-left
+        %p.col-xs-6.grid#grid-bottom-left
           Grandma
-        .col-xs-6#grid-bottom-right
+        %p.col-xs-6.grid#grid-bottom-right
           Grandpa
 
   .row
     .col-md-6.col-md-offset-3
       %form{role: 'form', action: '/call', method: 'post'}
         .form-group
-          %input.form-control.input-lg{type: "text", id: "number", name: "number", placeholder: "888-555-5555"}
+          // %input.form-control.input-lg{type: "text", id: "number", name: "number", placeholder: "888-555-5555"}
         %button.btn.btn-primary.btn-lg{type: "submit"} Ring It
 
       %h2 Don't worry, I already know your number.
