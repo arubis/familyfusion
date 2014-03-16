@@ -16,6 +16,9 @@ set :haml, :format => :html5, :layout => true
 # get environment variables
 Dotenv.load
 
+# enable sessions
+enable :sessions
+
 # set up twilio
 ACCOUNT_SID = ENV['TWILIO_SID']
 AUTH_TOKEN = ENV['TWILIO_TOKEN']
@@ -38,7 +41,7 @@ get '/' do
   haml :main, locals: { title: "Hello, world!" }
 end
 
-post '/call' do
+post '/call/?' do
    # Use the Twilio REST API to initiate an outgoing call
   if !params['number']
     redirect to('/error'), 'Invalid phone number'
@@ -49,7 +52,7 @@ post '/call' do
   data = {
     :from => CALLER_ID,
     :to => params['number'],
-    :url => BASE_URL + '/reminder',
+    :url => BASE_URL + '/reminder'
   }
 
   begin
@@ -63,14 +66,26 @@ post '/call' do
   redirect to('/calling'), "Calling #{params['number']}..."
 end
 
-get '/calling' do
+get '/calling/?' do
   "Outgoing call! ::  #{request.inspect}"
 end
 
-get '/error' do
+get '/error/?' do
   "Something went wrong: #{request.inspect}"
 end
 
+post '/reminder/?' do
+  # build up a response
+  response = Twilio::TwiML::Response.new do |r|
+    r.Say 'hello there', :voice => 'alice'
+    # r.Dial :callerId => '+14159992222' do |d|
+    #   d.Client 'jenny'
+    # end
+  end
+
+  # print the result
+  puts response.text
+end
 
 # get '/images/:image' do |image|
 #   redirect 
