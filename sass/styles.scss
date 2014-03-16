@@ -1,0 +1,10 @@
+// customize bootstrap variables here:
+@import 'variables';
+@import 'bootstrap';
+
+.contact-grid .row div {
+  display: block;
+  border: medium solid black;
+  text-align: center;
+}
+
