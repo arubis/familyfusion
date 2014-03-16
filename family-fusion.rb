@@ -23,6 +23,16 @@ end
 #  cache_control :public, :must_revalidate, :max_age => 300
 #end
 
+#### this should ABSOLUTELY be included in a separate file
+# this is AWFUL and NOT A BEST PRACTICE
+# BAD developer. BAD. NO POO.
+class Contact
+  include Redis::Objects
+end
+
+
+
+
 get '/' do
   haml :main
 end

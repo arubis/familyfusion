@@ -16,7 +16,8 @@ gem "foreman"
 gem 'dotenv'
 gem 'rails_12factor'
 
-gem 'redis' # I mean I only barely need this but long-term easy to justify
+gem 'redis' # used for 30 seconds and instantly essential
+gem 'redis-objects'
 
 gem 'builder' # need this to construct TwiML
 

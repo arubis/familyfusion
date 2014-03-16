@@ -13,7 +13,9 @@ Dotenv.load
 # set up redis
 require 'redis'
 uri = URI.parse(ENV["REDISCLOUD_URL"])
-$redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+Redis.current = $redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+
+require 'redis-objects'
 
 $: << File.dirname(__FILE__)
 require 'family-fusion'
