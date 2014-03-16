@@ -52,7 +52,7 @@ post '/call/?' do
   data = {
     :from => CALLER_ID,
     :to => params['number'],
-    :url => BASE_URL + '/reminder'
+    :url => BASE_URL + 'reminder'
   }
 
   begin
