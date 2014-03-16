@@ -29,14 +29,18 @@ $(document).ready(function() {
     var origLocation = $(this).offset();
 
     $('.pad').not(this).fadeOut();
-    $(this).fadeOut().prepend("Calling ").append("...");
+    $(this).fadeOut().find('.person').prepend("Calling ").append("...");
+
+    $.get('/elder-tips', function(data) {
+      target.find('.tips').prepend(data).fadeIn();
+    })
 
     var newHeight = $(window).height() - 200;
 
     $(this).fadeIn()
            .animate({'top': 0, 'height': newHeight,
-                     'line-height': newHeight, 
-                     'width': '100%'}, 1000);
+                     'line-height': 'normal',
+                     'width': '100%'}, 1000);  // 'line-height': newHeight, 
     // $.post('/call', "number=+16175002301", function(data, textStatus, xhr) {
     //   target.html("Calling someone!");
     // });

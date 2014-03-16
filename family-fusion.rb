@@ -75,6 +75,10 @@ post '/reminder/?' do
   response.text
 end
 
+get '/elder-tips/?' do
+  response = $redis.srandmember 'elder-tips'
+end
+
 # get '/images/:image' do |image|
 #   redirect 
 

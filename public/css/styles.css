@@ -7624,3 +7624,9 @@ button.close {
 .pad.right {
   float: right;
 }
+
+/* line 26, ../../sass/styles.scss */
+.tips {
+  margin: 20px;
+  background: rgba(80, 80, 80, 0.3);
+}
