@@ -16,6 +16,8 @@ gem "foreman"
 gem 'dotenv'
 gem 'rails_12factor'
 
+gem 'redis' # I mean I only barely need this but long-term easy to justify
+
 gem 'builder' # need this to construct TwiML
 
 # let's make some phone calls

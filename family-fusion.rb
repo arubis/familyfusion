@@ -1,30 +1,21 @@
 
 require 'sinatra'
-require 'sinatra/reloader' if development?
 
-require 'twilio-ruby'
+configure do
+  require 'haml'
+  require 'kramdown'
+  require 'sinatra/reloader' if development?
 
-require 'haml'
-require 'kramdown'
+  # enable sessions
+  enable :sessions
+  set :haml, :format => :html5, :layout => true
 
-# configure
-set :haml, :format => :html5, :layout => true
-   # n.b. :layout => true renders haml docs through layout.haml if it exists
-   # and can be redirected to another symbol for a different layout
-   # or "false" for none
-
-# get environment variables
-Dotenv.load
-
-# enable sessions
-enable :sessions
-
-# set up twilio
-ACCOUNT_SID = ENV['TWILIO_SID']
-AUTH_TOKEN = ENV['TWILIO_TOKEN']
-CALLER_ID = '+17139994373' # why yes I am hardcoding this
-BASE_URL = 'http://familyfusion.herokuapp.com/'
-@client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
+  # set up twilio
+  ACCOUNT_SID = ENV['TWILIO_SID']
+  AUTH_TOKEN = ENV['TWILIO_TOKEN']
+  CALLER_ID = '+17139994373' # why yes I am hardcoding this
+  BASE_URL = 'http://familyfusion.herokuapp.com/'
+end
 
 # set up basic caching
 #set :static_cache_control, [:public, :max_age => 300]
@@ -33,12 +24,7 @@ BASE_URL = 'http://familyfusion.herokuapp.com/'
 #end
 
 get '/' do
-  # @call = @client.account.calls.create(
-  #   from: '+17139994373',
-  #   to: "+16173790642",
-  #   url: 
-  # )
-  haml :main, locals: { title: "Hello, world!" }
+  haml :main, locals: { title: "" }
 end
 
 post '/call/?' do
@@ -91,10 +77,6 @@ end
 
 # get '/images/:image' do |image|
 #   redirect 
-
-# get '/bootstrap' do
-#   haml :bootstrap, :layout => :layout_bootstrap
-# end
 
 # get '/s3/*' do
 #   redirect 'https://(target server)/s3/' + params[:splat][0]
