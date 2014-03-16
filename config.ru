@@ -7,15 +7,13 @@ require 'thin'
 require 'dotenv'
 require 'twilio-ruby'
 
-configure do
-  # get environment variables
-  Dotenv.load
+# get environment variables
+Dotenv.load
 
-  # set up redis
-  require 'redis'
-  uri = URI.parse(ENV["REDISCLOUD_URL"])
-  $redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-end
+# set up redis
+require 'redis'
+uri = URI.parse(ENV["REDISCLOUD_URL"])
+$redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 
 $: << File.dirname(__FILE__)
 require 'family-fusion'
