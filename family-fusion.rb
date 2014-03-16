@@ -85,6 +85,7 @@ post '/reminder/?' do
 
   # print the result
   puts response.text
+  response.text
 end
 
 # get '/images/:image' do |image|
