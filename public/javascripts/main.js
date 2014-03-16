@@ -22,7 +22,7 @@ $(document).ready(function() {
   // 
   $('.pad').on('click tap', function() {
     var target = $(this);
-
+    mixpanel.track('outgoing call');
     singlePad = true;
 
     // prepare to animate
