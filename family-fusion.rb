@@ -56,7 +56,7 @@ get '/contact/:person' do |p|
   # dad = Contact.new("Dad", "+13038178155")
 
   # barffffff
-  MultiJson.dump [{name: p.capitalize, number: "+13038178155", lastcall: DateTime.now - 14}]
+  MultiJson.dump '{name: p.capitalize, number: "+13038178155", lastcall: DateTime.now - 14}'
 
 end
 
