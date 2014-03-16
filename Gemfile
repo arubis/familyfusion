@@ -30,6 +30,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'spork'
   gem 'jazz_hands'
+  gem 'racksh'
 end
 
 group :test do
