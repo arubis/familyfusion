@@ -3,9 +3,11 @@ $(document).ready(function() {
   function getPadHeight() { return Math.max(($(window).height() - 200) / 2, 30); }
 
   $('.pad').height(getPadHeight);
+  $('.pad').css('line-height', getPadHeight() + "px")
 
   $(window).resize(function() {
     $('.pad').height(getPadHeight());
+    $('.pad').css('line-height', getPadHeight() + "px")
   });
 
   // good lord I am exhausted. Just get one of these bloody things to
