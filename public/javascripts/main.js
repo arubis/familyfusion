@@ -1,7 +1,9 @@
 $(document).ready(function() {
   // this absolutely should be a separate file.
   $.getJSON('/contact/grandma', function(json, textStatus) {
-      
+    console.log(data.name);
+    console.log(data.number);
+    console.log(data.lastcall);
   });
 
   // more analytics! morlytics. manalytics.
