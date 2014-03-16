@@ -24,7 +24,7 @@ end
 #end
 
 get '/' do
-  haml :main, locals: { title: "" }
+  haml :main
 end
 
 post '/call/?' do

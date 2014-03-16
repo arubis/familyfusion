@@ -2,7 +2,11 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}
-      %title= locals[:title] + ""
+      / %title= "#{locals[:title]}"
+      - if locals[:title].nil? then
+        %title FamilyFusion
+      - else
+        %title= locals[:title] + " | FamilyFusion"
       %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
       %meta{:content => "", :name => "description"}
       %meta{:content => "Dylan Fitzgerald", :name => "author"}
@@ -11,7 +15,6 @@
     = haml :_styles
     = haml :_typekit
     -# = erb :_analytics
-
   %body
 
     = haml :_header
