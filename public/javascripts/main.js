@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-  var padHeight = ( $(window).height() - 150 ) / 2 ;
-  $('.grid').height(padHeight);
+  function getPadHeight() { return ($(window).height() - 200) / 2; }
+
+  $('.grid').height(getPadHeight);
 
   $(window).resize(function() {
-    padHeight = ( $(window).height() - 150 ) / 2 ;
-    $('.grid').height(padHeight);
+    $('.grid').height(getPadHeight());
   });
 
 });
